@@ -45,37 +45,6 @@ class SurveyComponent extends React.Component {
     this.setState({ isCompleted: true, actionText: actions.map(e => <div className="action"><h3 className="actionHeading">{e.heading}<input type="checkbox" className="headingCheckbox"/></h3><div className="actionText">{e.text}</div></div>) });
   }
   render() {
-    console.log("Questions: ");
-    console.log(questions);
-    let json = {
-    
-      questions: [
-        {
-          type: "checkbox",
-          name: "car",
-          title: "What car are you driving?",
-          isRequired: true,
-          hasSelectAll: true,
-          hasNone: true,
-          noneText: "None of the above",
-          colCount: 4,
-          choicesOrder: "asc",
-          choices: [
-            "Ford",
-            "Tesla",
-            "Vauxhall",
-            "Volkswagen",
-            "Nissan",
-            "Audi",
-            "Mercedes-Benz",
-            "BMW",
-            "Peugeot",
-            "Toyota",
-            "Citroen"
-          ]
-        }
-      ]
-    };
     var surveyRender = !this.state.isCompleted ? (
       <Survey.Survey
         json={questions}
